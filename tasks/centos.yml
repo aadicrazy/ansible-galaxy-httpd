@@ -1,0 +1,18 @@
+---
+# tasks file for installing httpd on centos7
+
+- name: install httpd releated package
+  yum: name={{ item }} state=present
+  with_items:
+    - httpd
+
+- name: template /etc/httpd/conf/httpd.conf
+  template: src=etc/httpd/conf/httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf mode=644 backup=yes
+  notify: restart httpd
+
+- name: install httpd on CentOS
+  include: ssl.yml
+  when: config_ssl is defined and config_ssl == true
+
+- name: start and enable httpd
+  service: name=httpd state=started enabled=yes
