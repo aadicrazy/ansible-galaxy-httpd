@@ -1,7 +1,7 @@
 httpd
 ==============
 
-ansible httpd deployment role.
+This role is used to deploy httpd(support tls configuration).
 
 
 Inventory file demo
