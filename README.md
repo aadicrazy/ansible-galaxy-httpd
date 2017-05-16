@@ -1,7 +1,7 @@
 httpd
 ==============
 
-This role is used to deploy httpd(support tls configuration).
+This role is used to deploy httpd(supporting tls configuration).
 
 
 Inventory file demo
