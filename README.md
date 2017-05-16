@@ -17,7 +17,6 @@ httpd-1
 Notice:
 
 * ansible_ssh_host variable in the inventory file is requried for httpd configurations
-* We use the group httpd, the group "cluster1" is temporary, you can name it as you want
 
 
 Role Variables
@@ -76,7 +75,7 @@ Example Playbook
 - hosts: httpd
   become: true
   roles:
-    - /path/to/httpd/role
+    - frank6866.httpd
 ```
 
 
