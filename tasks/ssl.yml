@@ -1,7 +1,7 @@
 ---
 # tasks file for installing httpd on centos7
 
-- name: install httpd releated package
+- name: install httpd ssl releated package
   yum: name={{ item }} state=present
   with_items:
     - mod_ssl

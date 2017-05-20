@@ -351,3 +351,14 @@ EnableSendfile on
 #
 # Load config files in the "/etc/httpd/conf.d" directory, if any.
 IncludeOptional conf.d/*.conf
+
+
+{% if enable_server_status is defined and enable_server_status == true %}
+# Enable server status
+<Location "/server-status">
+    SetHandler server-status
+    Require all granted
+    # Require ip 127.0.0.1 ::1
+</Location>
+{% endif %}
+
